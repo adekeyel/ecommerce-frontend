@@ -1,9 +1,17 @@
-import axios from 'axios';
+// import axios from 'axios';
+
+// const api = axios.create({
+//   baseURL: import.meta.env.VITE_API_URL || '/api',
+// });
+import axios from "axios";
+
+console.log("VITE_API_URL =", import.meta.env.VITE_API_URL);
 
 const api = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || '/api',
+  baseURL: import.meta.env.VITE_API_URL || "/api",
 });
 
+export default api;
 // Attach token to every request if present
 api.interceptors.request.use((config) => {
   const storedUser = localStorage.getItem('user');
